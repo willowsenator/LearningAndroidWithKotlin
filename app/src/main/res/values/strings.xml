@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">LearningAndroid</string>
+    <string name="textViewAgeText">Your age is</string>
+    <string name="editTextBirthdayHint">Type your birthyear</string>
+    <string name="buttonCalculateText">Calculate your age</string>
+    <string name="buttonNextText">Next</string>
+    <string name="toastErrorFromBirthYear">Type your birthyear before calculate your age</string>
+
 </resources>

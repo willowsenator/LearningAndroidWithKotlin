@@ -6,13 +6,50 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <EditText
+        android:id="@+id/editTextBirthday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CLARISA CLARI CLARISA"
+        android:layout_marginTop="124dp"
+        android:ems="10"
+        android:hint="@string/editTextBirthdayHint"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColorHint="#78909C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/textViewAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="@string/textViewAgeText"
+        app:layout_constraintStart_toStartOf="@+id/editTextBirthday"
+        app:layout_constraintTop_toBottomOf="@+id/editTextBirthday" />
+
+
+    <Button
+        android:id="@+id/buttonCalculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="@string/buttonCalculateText"
+        app:layout_constraintStart_toStartOf="@+id/textViewAge"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAge" />
+
+    <Button
+        android:id="@+id/buttonNext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="68dp"
+        android:text="@string/buttonNextText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

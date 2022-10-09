@@ -1,13 +1,50 @@
 package com.willowsenator.learningandroid
 
-import androidx.appcompat.app.AppCompatActivity
+import android.annotation.SuppressLint
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Toast.makeText(this, "Hola Toast", Toast.LENGTH_LONG).show()
+        val calculateButton = findViewById<Button>(R.id.buttonCalculate)
+        val nextButton = findViewById<Button>(R.id.buttonNext)
+
+        calculateButton.setOnClickListener {
+            calculateAge()
+        }
+
+        nextButton.setOnClickListener{
+            startActivity(Intent(this, SecondActivity::class.java))
+            finish()
+        }
+    }
+
+
+    private fun calculateAge(){
+        val editTextBirthday = findViewById<EditText>(R.id.editTextBirthday).text
+        if (editTextBirthday.isNotBlank()) {
+            val birthdayYear = editTextBirthday.toString().toInt()
+            val age = Calendar.getInstance().get(Calendar.YEAR) - birthdayYear
+            findViewById<TextView>(R.id.textViewAge).text =
+                "${getString(R.string.textViewAgeText)} $age"
+        }
+        else{
+            Toast.makeText(
+                this,
+                getString(R.string.toastErrorFromBirthYear),
+                Toast.LENGTH_LONG
+            ).show()
+        }
     }
 }
+
