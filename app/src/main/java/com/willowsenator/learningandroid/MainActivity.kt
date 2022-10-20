@@ -1,7 +1,6 @@
 package com.willowsenator.learningandroid
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -35,8 +34,8 @@ class MainActivity : AppCompatActivity() {
         if (editTextBirthday.isNotBlank()) {
             val birthdayYear = editTextBirthday.toString().toInt()
             val age = Calendar.getInstance().get(Calendar.YEAR) - birthdayYear
-            findViewById<TextView>(R.id.textViewAge).text =
-                "${getString(R.string.textViewAgeText)} $age"
+            val ageMessage = getString(R.string.textViewAgeText) + " " + age
+            findViewById<TextView>(R.id.textViewAge).text = ageMessage
         }
         else{
             Toast.makeText(
